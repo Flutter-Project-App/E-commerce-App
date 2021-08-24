@@ -1,23 +1,18 @@
-import 'package:auth_nav/auth_nav.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application/data/blocs/auth/auth_bloc.dart';
-import 'package:flutter_application/initialize_dependencies.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
 import 'application.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  await initializeDependencies();
+void main() {
 
   runApp(
-    MultiBlocProvider(
-      providers: [
-        BlocProvider.value(value: GetIt.instance.get<AuthNavigationBloc>()),
-        BlocProvider.value(value: GetIt.instance.get<AuthBloc>())
-      ],
-      child: const Application(),
-    )
+    MyApp()
   );
 }
+
+class MyApp extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return ();
+  }
+}
+

@@ -22,6 +22,8 @@ dependencies:
   shared_preferences:
   # Simple direct Service Locator
   get_it:
+  flutter_rating_bar:
+  google_fonts:
   #auth_nav
   auth_nav:
     git: https://github.com/dangngocduc/auth_nav
