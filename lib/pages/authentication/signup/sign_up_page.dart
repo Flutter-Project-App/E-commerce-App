@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/gen/assets.gen.dart';
+import 'package:flutter_application/pages/authentication/signin/sign_in_page.dart';
 import 'package:flutter_application/theme/constants.dart';
 import 'package:flutter_application/widgets/custom_form_field.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -17,8 +18,6 @@ class _SignUpPageState extends State<SignUpPage> {
   late TextEditingController _name;
   late TextEditingController _email;
   late TextEditingController _password;
-
-  FocusNode nameFocusNote = FocusNode();
 
   @override
   void initState() {
@@ -137,7 +136,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                   ],
                                 ),
                               ),
-                              onTap: () {},
+                              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignInPage())),
                             ),
                             const SizedBox(
                               height: 28,

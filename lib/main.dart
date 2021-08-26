@@ -22,6 +22,13 @@ class MyApp extends StatelessWidget {
               primary: Colors.white),
           textTheme: GoogleFonts.quicksandTextTheme(),
           backgroundColor: backgroundColor,
+          appBarTheme: const AppBarTheme(
+            iconTheme: IconThemeData(
+              color: mainColor
+            ),
+            backgroundColor: Colors.transparent,
+            elevation: 0.0
+          ),
           tabBarTheme: TabBarTheme(
               indicator: const UnderlineTabIndicator(
                   borderSide: BorderSide(color: Colors.redAccent, width: 4)),
