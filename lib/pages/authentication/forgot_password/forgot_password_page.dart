@@ -51,12 +51,11 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Align(
+                            Align(
                               alignment: Alignment.centerLeft,
                               child: Text(
                                 'Forgot password',
-                                style: TextStyle(
-                                    fontSize: 34, fontWeight: FontWeight.bold),
+                                style: Theme.of(context).textTheme.headline1,
                               ),
                             ),
                             SizedBox(
@@ -68,8 +67,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                                 mainAxisAlignment:
                                 MainAxisAlignment.spaceBetween,
                                 children: [
-                                  const Text('Please, enter your email address. You will receive a link to create a new password via email.',
-                                    style: TextStyle(fontWeight: FontWeight.bold),),
+                                  Text('Please, enter your email address. You will receive a link to create a new password via email.',
+                                    style: Theme.of(context).textTheme.bodyText1,),
                                   const SizedBox(height: 16,),
                                   Container(
                                     child: CustomTextFormField(
@@ -102,10 +101,9 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                                     onPressed: () {
                                       print(1);
                                     },
-                                    child: const Text(
+                                    child: Text(
                                       'SEND',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w800),
+                                      style: Theme.of(context).textTheme.button,
                                     ))),
                           ],
                         ),

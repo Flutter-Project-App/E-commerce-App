@@ -9,6 +9,10 @@ const Color _kKeyPenumbraOpacity = Color(0x1F000000); // alpha = 0.14
 const Color _kAmbientShadowOpacity = Color(0x1F000000); // alpha = 0.12
 
 class ProductWidget extends StatefulWidget {
+  final String image;
+  final String badges;
+  final String title;
+  ProductWidget(this.title, this.image, this.badges);
 
   @override
   _ProductWidgetState createState() => _ProductWidgetState();
@@ -33,12 +37,13 @@ class _ProductWidgetState extends State<ProductWidget> {
                     aspectRatio: 0.8,
                     child: Container(
                       child: Image.asset(
-                        Assets.icons.demoProduct1.path,
+                        widget.image,
                         fit: BoxFit.cover,
                       ),
                     ),
                   ),
-                  borderRadius: BorderRadius.all(const Radius.circular(8)),
+                  borderRadius:
+                      const BorderRadius.all(const Radius.circular(8)),
                 ),
                 Positioned(
                   child: Container(
@@ -47,20 +52,35 @@ class _ProductWidgetState extends State<ProductWidget> {
                     decoration: const ShapeDecoration(
                         color: Colors.white,
                         shadows: <BoxShadow>[
-                          BoxShadow(offset: Offset(0, 1), blurRadius: 1.0, spreadRadius: -1, color: _kKeyUmbraOpacity),
-                          BoxShadow(offset: Offset(0, 4), blurRadius: 4.0, spreadRadius: 0, color: _kKeyPenumbraOpacity),
-                          BoxShadow(offset: Offset(0, 6), blurRadius: 6.0, spreadRadius: 0, color: _kAmbientShadowOpacity),
+                          BoxShadow(
+                              offset: Offset(0, 1),
+                              blurRadius: 1.0,
+                              spreadRadius: -1,
+                              color: _kKeyUmbraOpacity),
+                          BoxShadow(
+                              offset: Offset(0, 4),
+                              blurRadius: 4.0,
+                              spreadRadius: 0,
+                              color: _kKeyPenumbraOpacity),
+                          BoxShadow(
+                              offset: Offset(0, 6),
+                              blurRadius: 6.0,
+                              spreadRadius: 0,
+                              color: _kAmbientShadowOpacity),
                         ],
-                        shape: CircleBorder()
-                    ),
+                        shape: CircleBorder()),
                     child: IconButton(
-                      icon: isLiked ? const Icon(
-                        Icons.favorite_border,
-                        color: secondaryColor,
-                        size: 20,
-                      ) : const Icon(
-                        Icons.favorite,
-                        color: redMainColor, size: 20,),
+                      icon: isLiked
+                          ? const Icon(
+                              Icons.favorite_border,
+                              color: secondaryColor,
+                              size: 20,
+                            )
+                          : const Icon(
+                              Icons.favorite,
+                              color: redMainColor,
+                              size: 20,
+                            ),
                       onPressed: () {
                         setState(() {
                           isLiked = !isLiked;
@@ -84,36 +104,59 @@ class _ProductWidgetState extends State<ProductWidget> {
                       itemSize: 16,
                       itemCount: 5,
                       itemBuilder: (context, _) => const Icon(
-                        Icons.star,
-                        color: Colors.amber,
-                        size: 16,
-                      ),
+                            Icons.star,
+                            color: Colors.amber,
+                            size: 16,
+                          ),
                       onRatingUpdate: (rating) {
                         print(rating);
                       }),
-                  Text('(12)', style: Theme.of(context).textTheme.caption!.copyWith(fontWeight: FontWeight.w300),)
+                  Text(
+                    '(12)',
+                    style: Theme.of(context)
+                        .textTheme
+                        .caption!
+                        .copyWith(fontWeight: FontWeight.w300),
+                  )
                 ],
               ),
             ),
-            Text('Dorothy Perkins', style: Theme.of(context).textTheme.caption!.copyWith(
-                color: Theme.of(context).hintColor
-            ),),
-            Text('Evening Dress', style: Theme.of(context).textTheme.caption,),
-            Padding(padding: const EdgeInsets.symmetric(vertical: 4),
+            Text(
+              'Dorothy Perkins',
+              style: Theme.of(context)
+                  .textTheme
+                  .caption!
+                  .copyWith(color: Theme.of(context).hintColor),
+            ),
+            const SizedBox(height: 5,),
+            Text(
+              widget.title,
+              style: Theme.of(context).textTheme.caption,
+            ),
+            const SizedBox(height: 3,),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4),
               child: Row(
                 children: <Widget>[
-                  Text('15\$', style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                      color: Theme.of(context).hintColor,
-                      fontWeight: FontWeight.w500,
-                      decoration: TextDecoration.lineThrough
-                  ),),
-                  const SizedBox(width: 8,),
-                  Text('10\$', style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                      color: redMainColor,
-                      fontWeight: FontWeight.w500
-                  ),)
+                  Text(
+                    '15\$',
+                    style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                        color: Theme.of(context).hintColor,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        decoration: TextDecoration.lineThrough),
+                  ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  Text(
+                    '10\$',
+                    style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                        color: redMainColor, fontSize: 14, fontWeight: FontWeight.w600),
+                  )
                 ],
-              ),)
+              ),
+            )
           ],
         ),
       ),

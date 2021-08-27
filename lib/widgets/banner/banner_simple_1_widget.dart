@@ -27,8 +27,8 @@ class BannerSimple1Widget extends StatelessWidget {
                 padding: kPaddingStandard,
                 child: Text(
                   title,
-                  style: Theme.of(context).textTheme.headline3!.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.headline1!.copyWith(
+                      color: Colors.white),
                 ),
               ),
               bottom: 0,

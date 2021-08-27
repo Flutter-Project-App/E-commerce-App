@@ -55,12 +55,11 @@ class _SignUpPageState extends State<SignUpPage> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Align(
+                            Align(
                               alignment: Alignment.centerLeft,
                               child: Text(
                                 'Sign up',
-                                style: TextStyle(
-                                    fontSize: 34, fontWeight: FontWeight.bold),
+                                style: Theme.of(context).textTheme.headline1,
                               ),
                             ),
                             SizedBox(
@@ -130,7 +129,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                     const Text(
                                       'Already have an account?',
                                       style: TextStyle(
-                                          fontWeight: FontWeight.bold),
+                                          fontWeight: FontWeight.w600),
                                     ),
                                     Image.asset(Assets.icons.arrowRight.path)
                                   ],
@@ -154,17 +153,16 @@ class _SignUpPageState extends State<SignUpPage> {
                                     onPressed: () {
                                       print(1);
                                     },
-                                    child: const Text(
+                                    child: Text(
                                       'SIGN UP',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w800),
+                                      style: Theme.of(context).textTheme.button,
                                     ))),
                             const Spacer(),
                             Column(
                               children: [
                                 const Text(
                                   'Or sign up with social account',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                  style: TextStyle(fontWeight: FontWeight.w600),
                                 ),
                                 const SizedBox(
                                   height: 12,

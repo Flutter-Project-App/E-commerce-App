@@ -32,6 +32,7 @@ class SimpleTitleWidget extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Theme.of(context).colorScheme.onBackground),
                   child: title!),
+              const SizedBox(height: 4,),
               DefaultTextStyle(
                   style: Theme.of(context).textTheme.caption!, child: subtitle!)
             ],

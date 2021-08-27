@@ -5,6 +5,34 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsFontsGen {
+  const $AssetsFontsGen();
+
+  String get metropolisBlack => 'assets/fonts/Metropolis-Black.otf';
+  String get metropolisBlackItalic => 'assets/fonts/Metropolis-BlackItalic.otf';
+  String get metropolisBold => 'assets/fonts/Metropolis-Bold.otf';
+  String get metropolisBoldItalic => 'assets/fonts/Metropolis-BoldItalic.otf';
+  String get metropolisExtraBold => 'assets/fonts/Metropolis-ExtraBold.otf';
+  String get metropolisExtraBoldItalic =>
+      'assets/fonts/Metropolis-ExtraBoldItalic.otf';
+  String get metropolisExtraLight => 'assets/fonts/Metropolis-ExtraLight.otf';
+  String get metropolisExtraLightItalic =>
+      'assets/fonts/Metropolis-ExtraLightItalic.otf';
+  String get metropolisLight => 'assets/fonts/Metropolis-Light.otf';
+  String get metropolisLightItalic => 'assets/fonts/Metropolis-LightItalic.otf';
+  String get metropolisMedium => 'assets/fonts/Metropolis-Medium.otf';
+  String get metropolisMediumItalic =>
+      'assets/fonts/Metropolis-MediumItalic.otf';
+  String get metropolisRegular => 'assets/fonts/Metropolis-Regular.otf';
+  String get metropolisRegularItalic =>
+      'assets/fonts/Metropolis-RegularItalic.otf';
+  String get metropolisSemiBold => 'assets/fonts/Metropolis-SemiBold.otf';
+  String get metropolisSemiBoldItalic =>
+      'assets/fonts/Metropolis-SemiBoldItalic.otf';
+  String get metropolisThin => 'assets/fonts/Metropolis-Thin.otf';
+  String get metropolisThinItalic => 'assets/fonts/Metropolis-ThinItalic.otf';
+}
+
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
@@ -14,6 +42,12 @@ class $AssetsIconsGen {
       const AssetGenImage('assets/icons/category_card_1.png');
   AssetGenImage get categoryCard2 =>
       const AssetGenImage('assets/icons/category_card_2.png');
+  AssetGenImage get demoBag1 =>
+      const AssetGenImage('assets/icons/demo_bag_1.png');
+  AssetGenImage get demoBag2 =>
+      const AssetGenImage('assets/icons/demo_bag_2.png');
+  AssetGenImage get demoBag3 =>
+      const AssetGenImage('assets/icons/demo_bag_3.png');
   AssetGenImage get demoProduct1 =>
       const AssetGenImage('assets/icons/demo_product_1.png');
   AssetGenImage get demoProduct2 =>
@@ -38,6 +72,7 @@ class $AssetsIconsGen {
 class Assets {
   Assets._();
 
+  static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
 }
 

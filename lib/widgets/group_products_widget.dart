@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/gen/assets.gen.dart';
 import 'package:flutter_application/widgets/product_widget.dart';
 
 class GroupProductsWidget extends StatelessWidget {
@@ -8,6 +9,7 @@ class GroupProductsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.only(top: 35),
       child: Column(
         children: <Widget>[
           title,
@@ -15,19 +17,17 @@ class GroupProductsWidget extends StatelessWidget {
             width: double.infinity,
             child: IntrinsicHeight(
               child: SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
-                padding: EdgeInsets.symmetric(horizontal: 16),
+                physics: const BouncingScrollPhysics(),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: <Widget>[
-                    ProductWidget(),
+                    ProductWidget('Evening Dress', Assets.icons.demoProduct2.path, '-20%'),
                     const VerticalDivider(width: 16, color: Colors.transparent,),
-                    ProductWidget(),
+                    ProductWidget('Sport Dress', Assets.icons.demoProduct1.path, '-15%'),
                     const VerticalDivider(width: 16, color: Colors.transparent,),
-                    ProductWidget(),
+                    ProductWidget('Sport Dress', Assets.icons.demoProduct1.path, '-20%'),
                     const VerticalDivider(width: 16, color: Colors.transparent,),
-                    ProductWidget(),
-                    const VerticalDivider(width: 16, color: Colors.transparent,)
                   ],
                 ),
               ),

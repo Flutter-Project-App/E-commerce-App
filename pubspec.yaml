@@ -44,3 +44,20 @@ flutter:
   uses-material-design: true
   assets:
     - assets/icons/
+    - assets/fonts/
+  fonts:
+    - family: MetropolisBold
+      fonts:
+        - asset: assets/fonts/Metropolis-Regular.otf
+        - asset: assets/fonts/Metropolis-Bold.otf
+          weight: 800
+    - family: MetropolisSemiBold
+      fonts:
+        - asset: assets/fonts/Metropolis-Regular.otf
+        - asset: assets/fonts/Metropolis-SemiBold.otf
+          weight: 600
+    - family: MetropolisThin
+      fonts:
+        - asset: assets/fonts/Metropolis-Regular.otf
+        - asset: assets/fonts/Metropolis-Thin.otf
+          weight: 200

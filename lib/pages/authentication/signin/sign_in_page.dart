@@ -56,12 +56,11 @@ class _SignInPageState extends State<SignInPage> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Align(
+                            Align(
                               alignment: Alignment.centerLeft,
                               child: Text(
                                 'Login',
-                                style: TextStyle(
-                                    fontSize: 34, fontWeight: FontWeight.bold),
+                                style: Theme.of(context).textTheme.headline1,
                               ),
                             ),
                             SizedBox(
@@ -116,7 +115,7 @@ class _SignInPageState extends State<SignInPage> {
                                     const Text(
                                       'Forgot your password?',
                                       style: TextStyle(
-                                          fontWeight: FontWeight.bold),
+                                          fontWeight: FontWeight.w600),
                                     ),
                                     Image.asset(Assets.icons.arrowRight.path)
                                   ],
@@ -141,17 +140,16 @@ class _SignInPageState extends State<SignInPage> {
                                       print(1);
                                       Navigator.of(context).push(MaterialPageRoute(builder: (context) => const MainPage()));
                                     },
-                                    child: const Text(
+                                    child: Text(
                                       'LOGIN',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w800),
+                                      style: Theme.of(context).textTheme.button,
                                     ))),
                             const Spacer(),
                             Column(
                               children: [
                                 const Text(
                                   'Or login with social account',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                  style: TextStyle(fontWeight: FontWeight.w600),
                                 ),
                                 const SizedBox(
                                   height: 12,
