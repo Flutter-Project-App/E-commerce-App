@@ -57,15 +57,19 @@ class $AssetsIconsGen {
   String get facebook => 'assets/icons/facebook.svg';
   String get google => 'assets/icons/google.svg';
   String get homeBlack24dp => 'assets/icons/home_black_24dp.svg';
-  String get icBag => 'assets/icons/ic_bag.svg';
+  String get icBagActive => 'assets/icons/ic_bag_active.svg';
+  String get icBagInactive => 'assets/icons/ic_bag_inactive.svg';
   AssetGenImage get icDemoAvatar =>
       const AssetGenImage('assets/icons/ic_demo_avatar.png');
-  String get icFavorite => 'assets/icons/ic_favorite.svg';
+  String get icFavoriteActive => 'assets/icons/ic_favorite_active.svg';
+  String get icFavoriteInactive => 'assets/icons/ic_favorite_inactive.svg';
   String get icFilter => 'assets/icons/ic_filter.svg';
   String get icHome => 'assets/icons/ic_home.svg';
   String get icHomeInactive => 'assets/icons/ic_home_inactive.svg';
-  String get icProfile => 'assets/icons/ic_profile.svg';
-  String get icShop => 'assets/icons/ic_shop.svg';
+  String get icProfileActive => 'assets/icons/ic_profile_active.svg';
+  String get icProfileInactive => 'assets/icons/ic_profile_inactive.svg';
+  String get icShopActive => 'assets/icons/ic_shop_active.svg';
+  String get icShopInactive => 'assets/icons/ic_shop_inactive.svg';
   String get icSort => 'assets/icons/ic_sort.svg';
 }
 

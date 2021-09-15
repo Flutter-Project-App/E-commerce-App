@@ -96,6 +96,45 @@ class MyApp extends StatelessWidget {
                 fontFamily: FontFamily.metropolisSemiBold
             ),
           ),
+          inputDecorationTheme: InputDecorationTheme(
+            prefixStyle: TextStyle(color: Colors.transparent),
+            hintStyle: Theme.of(context).textTheme.subtitle1!.copyWith(
+                fontWeight: FontWeight.normal,
+                color: Color(0xffd3d9df)
+            ),
+            labelStyle: TextStyle(
+                color: Colors.white,
+                fontSize: 12,
+                fontWeight: FontWeight.normal),
+            // floatingLabelBehavior: FloatingLabelBehavior.always,
+            suffixStyle: const TextStyle(color: Colors.white),
+            errorStyle: const TextStyle(color: Colors.red, fontSize: 12),
+            contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+            filled: true,
+            fillColor: Colors.white,
+            border:  OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+              borderSide: BorderSide(color: Color(0xffd9d9d9), width: 1),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+              borderSide: BorderSide(color: Color(0xffd9d9d9), width: 1),
+            ),
+            focusedBorder:   OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+              borderSide: BorderSide(color: Colors.white, width: 1),
+            ),
+            disabledBorder:  OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+              borderSide: BorderSide(color: Color(0xffd9d9d9), width: 1),
+            ),
+          ),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(minimumSize: Size(double.infinity, 48),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20),
+                    side: BorderSide(color: Colors.transparent)),
+                primary: mainColor,
+                elevation: 0),),
           backgroundColor: backgroundColor,
           appBarTheme: const AppBarTheme(
             iconTheme: IconThemeData(

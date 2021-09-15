@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/gen/assets.gen.dart';
 import 'package:flutter_application/pages/bag/bag_item_widget.dart';
 import 'package:flutter_application/theme/constants.dart';
+import 'package:flutter_application/widgets/form_field/my_custom_text_form_field.dart';
 
 class BagPage extends StatefulWidget {
   const BagPage({Key? key}) : super(key: key);
@@ -28,6 +29,10 @@ class _BagPageState extends State<BagPage> {
             padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
             sliver: SliverList(
               delegate: SliverChildListDelegate([
+                Text(
+                  'My Bag',
+                  style: Theme.of(context).textTheme.headline1),
+                SizedBox(height: 24,),
                 BagItemWidget(Assets.icons.demoBag1.path),
                 const Divider(
                   height: 16,
@@ -59,7 +64,8 @@ class _BagPageState extends State<BagPage> {
                 padding: EdgeInsets.only(left: 16),
                 child: Row(
                   children: <Widget>[
-                    const Expanded(child: Text('Enter your promo code')),
+                    Expanded(child: MyCustomTextFormField(hintText: 'Enter your promo code',)),
+                    SizedBox(width: 16,),
                     Container(
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,

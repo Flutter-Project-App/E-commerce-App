@@ -5,6 +5,7 @@ import 'package:flutter_application/pages/home/favorites_page.dart';
 import 'package:flutter_application/pages/home/home_page.dart';
 import 'package:flutter_application/pages/home/profile_page.dart';
 import 'package:flutter_application/pages/home/shop_page.dart';
+import 'package:flutter_application/theme/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class MainPage extends StatefulWidget {
@@ -54,57 +55,40 @@ class _MainPageState extends State<MainPage> {
             },
             items: [
               BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    Assets.icons.icHomeInactive,
-                    color: _currentIndex == 0
-                        ? Theme.of(context).colorScheme.secondary
-                        : Theme.of(context).hintColor,
-                  ),
+                  icon: SvgPicture.asset(_currentIndex == 0
+                      ? Assets.icons.icHome
+                      : Assets.icons.icHomeInactive),
                   label: 'Home'),
               BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    Assets.icons.icShop,
-                    color: _currentIndex == 1
-                        ? Theme.of(context).colorScheme.secondary
-                        : Theme.of(context).hintColor,
-                  ),
+                  icon: SvgPicture.asset(_currentIndex == 1
+                      ? Assets.icons.icShopActive
+                      : Assets.icons.icShopInactive),
                   label: 'Shop'),
               BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    Assets.icons.icBag,
-                    color: _currentIndex == 2
-                        ? Theme.of(context).colorScheme.secondary
-                        : Theme.of(context).hintColor,
-                  ),
+                  icon: SvgPicture.asset(_currentIndex == 2
+                      ? Assets.icons.icBagActive
+                      : Assets.icons.icBagInactive),
                   label: 'Bag'),
               BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    Assets.icons.icFavorite,
-                    color: _currentIndex == 3
-                        ? Theme.of(context).colorScheme.secondary
-                        : Theme.of(context).hintColor,
-                  ),
+                  icon: SvgPicture.asset(_currentIndex == 3
+                      ? Assets.icons.icFavoriteActive
+                      : Assets.icons.icFavoriteInactive),
                   label: 'Favorites'),
               BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    Assets.icons.icProfile,
-                    color: _currentIndex == 4
-                        ? Theme.of(context).colorScheme.secondary
-                        : Theme.of(context).hintColor,
-                  ),
+                  icon: SvgPicture.asset(_currentIndex == 4
+                      ? Assets.icons.icProfileActive
+                      : Assets.icons.icProfileInactive),
                   label: 'Profile')
             ],
             currentIndex: _currentIndex,
             backgroundColor: Colors.white,
             fixedColor: Theme.of(context).colorScheme.secondary,
             selectedLabelStyle: Theme.of(context).textTheme.caption!.copyWith(
-              fontWeight: FontWeight.w800,
-              color: Theme.of(context).colorScheme.secondary
-            ),
+                fontWeight: FontWeight.w800,
+                color: Theme.of(context).colorScheme.secondary),
             unselectedLabelStyle: Theme.of(context).textTheme.caption!.copyWith(
                 fontWeight: FontWeight.w300,
-                color: Theme.of(context).colorScheme.secondary
-            ),
+                color: Theme.of(context).colorScheme.secondary),
             type: BottomNavigationBarType.fixed,
           ),
         ),
