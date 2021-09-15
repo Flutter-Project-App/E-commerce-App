@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/gen/assets.gen.dart';
+import 'package:flutter_application/pages/profile/settings_page.dart';
 import 'package:flutter_application/theme/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -129,7 +130,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         color: secondaryColor, fontWeight: FontWeight.w500)),
                 trailing: Icon(Icons.navigate_next),
                 onTap: () {
-                  // Navigator.of(context).push(route)
+                  Navigator.of(context).push(CupertinoPageRoute(builder: (context) => SettingsPage()));
                 },
               ),
             ]))
