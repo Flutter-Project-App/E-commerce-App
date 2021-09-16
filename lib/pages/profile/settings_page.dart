@@ -16,6 +16,9 @@ class _SettingsPageState extends State<SettingsPage> {
   var fullnameController = TextEditingController();
   var dateController = TextEditingController();
   var passwordController = TextEditingController();
+  var oldPasswordController = TextEditingController();
+  var newPasswordController = TextEditingController();
+  var reNewPasswordController = TextEditingController();
 
   bool _switchValue1 = true;
   bool _switchValue2 = true;
@@ -80,7 +83,116 @@ class _SettingsPageState extends State<SettingsPage> {
                   Text('Password',
                       style: Theme.of(context).textTheme.bodyText2),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showModalBottomSheet(
+                            context: context,
+                            builder: (context) {
+                              return Container(
+                                height: 450,
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 36, horizontal: 16),
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    children: [
+                                      Text('Password Change',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .headline5),
+                                      const SizedBox(
+                                        height: 18,
+                                      ),
+                                      Container(
+                                        height: 64,
+                                        child: CustomTextFormField(
+                                          controller: oldPasswordController,
+                                          isPassword: true,
+                                          labelText: 'Old Password',
+                                        ),
+                                        padding: const EdgeInsets.only(
+                                            left: 20, right: 20, top: 6),
+                                        decoration: const BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(8))),
+                                      ),
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.end,
+                                        children: [
+                                          TextButton(
+                                              onPressed: () {},
+                                              child: Text('Forgot Password?',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .bodyText1!
+                                                      .copyWith(
+                                                          color: secondaryColor,
+                                                          fontWeight:
+                                                              FontWeight.w500))),
+                                        ],
+                                      ),
+                                      Container(
+                                        height: 64,
+                                        child: CustomTextFormField(
+                                          controller: newPasswordController,
+                                          isPassword: true,
+                                          labelText: 'New Password',
+                                        ),
+                                        padding: const EdgeInsets.only(
+                                            left: 20, right: 20, top: 6),
+                                        decoration: const BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(8))),
+                                      ),
+                                      const SizedBox(
+                                        height: 24,
+                                      ),
+                                      Container(
+                                        height: 64,
+                                        child: CustomTextFormField(
+                                          controller: reNewPasswordController,
+                                          isPassword: true,
+                                          labelText: 'Repeat New Password',
+                                        ),
+                                        padding: const EdgeInsets.only(
+                                            left: 20, right: 20, top: 6),
+                                        decoration: const BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(8))),
+                                      ),
+                                      const SizedBox(
+                                        height: 32,
+                                      ),
+                                      Container(
+                                          width: double.infinity,
+                                          padding: const EdgeInsets.only(
+                                              left: 2, right: 2),
+                                          height: 48,
+                                          decoration: const BoxDecoration(
+                                              color: redMainColor,
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(25))),
+                                          child: TextButton(
+                                              onPressed: () {
+                                                print(1);
+                                                Navigator.pop(context);
+                                              },
+                                              child: Text(
+                                                'SAVE PASSWORD',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .button,
+                                              )))
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.vertical(
+                                    top: Radius.circular(34))));
+                      },
                       child: Text('Change',
                           style: Theme.of(context)
                               .textTheme
